@@ -23,6 +23,8 @@
                 <input id="no" type="number" class="form-control" placeholder="輸入。。" aria-label="Username" aria-describedby="basic-addon1" autocomplete="off" autofocus>
             </div>
             <button class="btn btn-primary" onclick="go(2);return false;";>第一學期成績單</button>
+	    &nbsp;
+            <button class="btn btn-primary" onclick="go(4);return false;";>第二學期成績單</button>
             <br />
             <blockquote class="blockquote text-center">
 				<a href="https://bit.ly/2tfq4Nb" style="color:inherit; text-decoration:none;"><p class="mb-0">跟自己比賽 不要跟別人比較</p></a>
@@ -46,8 +48,13 @@
         function go(a){
             switch(a) {
                 case 2:
-                    url = "http://www.siseduswk.my/chms1/rpc/report/rpcardsmt1p.asp?k=FDEL|f|"+caesar(document.getElementById('no').value)+"|F|LH";
+                    url = "http://www.siseduswk.my/chms1/rpc/report/rpcardsmt1p.asp?k=FDEL|f|"+caesar(document.getElementById('no').value)+"|F|DD";
                     window.location.href = url;
+		    break;
+                case 4:
+                    url = "http://www.siseduswk.my/chms1/rpc/report/rpcardsmt2p.asp?k=FDEL|f|"+caesar(document.getElementById('no').value)+"|H|DD";
+                    window.location.href = url;
+		    break;
             }
         }
 
