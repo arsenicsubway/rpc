@@ -20,11 +20,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">學號</span>
                 </div>
-                <input id="no" type="number" class="form-control" placeholder="輸入。。" aria-label="Username" aria-describedby="basic-addon1" autocomplete="off" autofocus>
+                <input id="no" type="number" class="form-control" placeholder="輸入。。" aria-label="Username" aria-describedby="basic-addon1" autocomplete="off" autofocus  onkeypress="return event.keyCode!=13">
             </div>
             <button class="btn btn-primary" onclick="go(2);return false;";>第一學期成績單</button>
 	    &nbsp;
-            <button class="btn btn-primary" onclick="go(4);return false;";>第二學期成績單</button>
+            <button class="btn btn-primary" onclick="go(3);return false;";>第二學期成績單（非畢業班）</button>
+	    &nbsp;
+            <button class="btn btn-primary" onclick="go(4);return false;";>第二學期成績單（畢業班）</button>
             <br />
             <blockquote class="blockquote text-center">
 				<a href="https://bit.ly/2tfq4Nb" style="color:inherit; text-decoration:none;"><p class="mb-0">跟自己比賽 不要跟別人比較</p></a>
@@ -49,6 +51,10 @@
             switch(a) {
                 case 2:
                     url = "http://www.siseduswk.my/chms1/rpc/report/rpcardsmt1p.asp?k=FDEL|f|"+caesar(document.getElementById('no').value)+"|F|DD";
+                    window.location.href = url;
+		    break;
+                case 3:
+                    url = "http://www.siseduswk.my/chms1/rpc/report/rpcardsmt2p.asp?k=FDEL|f|"+caesar(document.getElementById('no').value)+"|J|DD";
                     window.location.href = url;
 		    break;
                 case 4:
